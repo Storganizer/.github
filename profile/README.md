@@ -38,81 +38,22 @@ Items without QR codes, for whatever reason, can still change state by scanning 
 
 
 ## Repositories
- In the future, I see 3 or 4 repos:
- - api
- - mobile-app
- - web-app
- - desktop-app (dont judge, since my pinephone pro does not yet support aosp, I do need kind of a native linux app)
-
-Right now, I am going to do everything just in here.
+- API
+- UI
+- DATA
 
 ## High Level Architecture
 
-```mermaid
-  graph TD;
-    Database-->Api;
-    Api-->Database;
-
-    Api<-->Website;
-
-    Api<-->MobileApp;
-
-    Api<-->DesktopApp;
+./concept/HIGH_LEVEL.md
 
 ```
 
 ## Data Structure
 
-```mermaid
-erDiagram
-    LOCATION {
-        string name
-        string description
-        string image
-        int classification
-    }
-
-    
-    BOX {
-        string name
-        string description
-        date lastAccess
-    }
-
-
-    ITEM {
-        string name
-        string description
-        string image
-        string state
-        date lastUse
-
-    }
-
-    TAG {
-        string name
-        string value
-    }
-
-    BRAND {
-        string name
-    }
-
-
-
-
-    LOCATION ||--|{ BOX : stores
-    BOX ||--|{ ITEM : contains
-    ITEM }|--|{ TAG : has
-    ITEM }|--|| BRAND : is
-
-
-
-```
-
+./concept/ER_MODEL.md
 
 ## Planned Features
-- [x] QR Codes or NFC Tags on boxes to check what is in there
-- [x] QR Codes or NFC Tags to identify an object
-- [x] Search function for items by brand, tags, fulltext search to identify an object
-- [x] Possibility to find identified objects or check where there belong to
+- UI
+- API
+- Data Import/Export
+- 3D Models
