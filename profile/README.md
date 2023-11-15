@@ -1,17 +1,58 @@
 # storganizer
 
-## Early sneak peak
-```
-git clone git@github.com:claudio-walser/storganizer.git
-cd storganizer/api
-python api.py # sorry no requirements.txt right now, flask and stuff is needed - sorry again
+## OpenSource
 
-# in a second terminal
-cd storganizer/ui
+While there are applications doing exactly what i want
+
+Commercial offerings
+- https://www.iboxxit.com/de/
+- https://housebook.io/
+- StuffKeeper
+- and alot more https://play.google.com/store/search?q=inventory&c=apps
+
+But, there is nothing where you also own your data. This is the gap storganizer is trying to fill.
+I am a strong believer in "Everybody should be in control of where his/her data is persisted and what might or might not happen with it." 
+
+
+
+## Run it locally
+
+API
+```
+# clone and change directory
+git clone git@github.com:Storganizer/api.git storganizer-api
+cd storganizer-api
+
+# create tables and seed some data if needed
+./seed.py
+
+# run the api
+python3 api.py
+```
+
+UI
+```
+# clone and change directory
+git clone git@github.com:Storganizer/ui.git storganizer-ui
+cd storganizer-ui
+
+# install all packages
 npm install
+
+# start the webappliation
 npm run start
 ```
-A webbrowser should open and you should hopefully be greeted with with the application
+Both appliations are now accessible in the webbrowser
+API: http://localhost:5000
+WebUI: http://localhost:3000
+
+
+
+
+
+
+# Legacy Docs
+
 
 ## Description
 Application to manage your storage at home. It is really not much more than an idea.
